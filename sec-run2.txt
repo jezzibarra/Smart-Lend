@@ -1,0 +1,535 @@
+◇ injected env (17) from .env
+[DATABASE] Connected to MongoDB (db: "smart_lend_test_security")
+[DATABASE] Connection established on attempt 1 (db: "smart_lend_test_security")
+[API] POST /api/admin/login
+[API] POST /api/auth/send-otp
+[OTP] Verification code dispatched to appcust1@test.local: 420126
+[API] POST /api/auth/signup
+[API] POST /api/auth/login
+[API] POST /api/auth/send-otp
+[OTP] Verification code dispatched to appcust2@test.local: 986701
+[API] POST /api/auth/signup
+[API] POST /api/auth/login
+✖ business rates endpoint is public and complete (2791.8875ms)
+✖ CORS rejects disallowed origins for API requests (2.416ms)
+✖ CORS allows same-origin browser requests (login page usability) (0.3111ms)
+✖ CORS allows file:// pages in development mode (0.1231ms)
+✖ application submission requires authentication (0.1237ms)
+✖ submission generates a unique reference and Pending Review status (0.0909ms)
+✖ financial evaluation is computed server-side (client figures ignored) (0.0742ms)
+✖ password hashes never appear in API responses and verify correctly (0.0628ms)
+✖ passwords are stored as bcrypt hashes, never plaintext (0.1073ms)
+✖ registration ignores unpermitted fields (no role escalation via signup) (0.0926ms)
+✖ customers see only their own applications (0.0475ms)
+✖ customers cannot access admin application APIs (0.0893ms)
+✖ customers cannot authenticate through the admin login endpoint (0.0602ms)
+✖ login rate limiting blocks brute-force attempts (0.0389ms)
+✖ unauthenticated requests cannot access protected APIs (0.0357ms)
+✖ customers cannot access admin APIs (RBAC enforced server-side) (0.0654ms)
+✖ customers cannot authenticate through the admin login endpoint (0.0456ms)
+✖ customers can read ONLY their own loan and payment records (0.0485ms)
+✖ customer profile exposes only the account own data (0.0338ms)
+✖ admin can manage client records with validation and audit logging (0.0335ms)
+✖ JWT tokens are required and validated (no forged roles) (0.0366ms)
+✖ loan application records never leak the owner id in API responses (0.0388ms)
+✖ server source and config files are never served statically (0.0345ms)
+✖ security headers are present on API responses (0.0333ms)
+✖ CORS rejects disallowed origins for API requests (0.034ms)
+✖ CORS allows same-origin browser requests (login page usability) (0.0328ms)
+✖ CORS allows file:// pages in development mode (0.033ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 0
+ℹ fail 27
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3998.4444
+
+✖ failing tests:
+
+test at test\security.test.js:20:3
+✖ business rates endpoint is public and complete (2791.8875ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ CORS rejects disallowed origins for API requests (2.416ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ CORS allows same-origin browser requests (login page usability) (0.3111ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ CORS allows file:// pages in development mode (0.1231ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ application submission requires authentication (0.1237ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ submission generates a unique reference and Pending Review status (0.0909ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ financial evaluation is computed server-side (client figures ignored) (0.0742ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ password hashes never appear in API responses and verify correctly (0.0628ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ passwords are stored as bcrypt hashes, never plaintext (0.1073ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ registration ignores unpermitted fields (no role escalation via signup) (0.0926ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ customers see only their own applications (0.0475ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ customers cannot access admin application APIs (0.0893ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ customers cannot authenticate through the admin login endpoint (0.0602ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ login rate limiting blocks brute-force attempts (0.0389ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ unauthenticated requests cannot access protected APIs (0.0357ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ customers cannot access admin APIs (RBAC enforced server-side) (0.0654ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ customers cannot authenticate through the admin login endpoint (0.0456ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ customers can read ONLY their own loan and payment records (0.0485ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ customer profile exposes only the account own data (0.0338ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ admin can manage client records with validation and audit logging (0.0335ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ JWT tokens are required and validated (no forged roles) (0.0366ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ loan application records never leak the owner id in API responses (0.0388ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ server source and config files are never served statically (0.0345ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ security headers are present on API responses (0.0333ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ CORS rejects disallowed origins for API requests (0.034ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ CORS allows same-origin browser requests (login page usability) (0.0328ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }
+
+test at test\security.test.js:20:3
+✖ CORS allows file:// pages in development mode (0.033ms)
+  [TypeError: Failed to parse URL from http://127.0.0.1:56296http://127.0.0.1:56296/api/applications] {
+    [cause]: TypeError: Invalid URL
+        at new URL (node:internal/url:895:25)
+        at new Request (node:internal/deps/undici/undici:12107:25)
+        at fetch (node:internal/deps/undici/undici:13032:25)
+        at fetch (node:internal/deps/undici/undici:17857:10)
+        at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+        at api (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:42:21)
+        at TestContext.<anonymous> (C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:101:27)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async TestHook.run (node:internal/test_runner/test:1409:7) {
+      code: 'ERR_INVALID_URL',
+      input: 'http://127.0.0.1:56296http://127.0.0.1:56296/api/applications'
+    }
+  }

@@ -1,0 +1,39 @@
+◇ injected env (17) from .env
+[DATABASE] Connected to MongoDB (db: "smart_lend_test_security")
+[DATABASE] Connection established on attempt 1 (db: "smart_lend_test_security")
+[API] POST /api/admin/login
+[API] POST /api/auth/send-otp
+[OTP] Verification code dispatched to appcust1@test.local: 156464
+[API] POST /api/auth/signup
+[API] POST /api/auth/login
+[API] POST /api/auth/send-otp
+[OTP] Verification code dispatched to appcust2@test.local: 967214
+[API] POST /api/auth/signup
+[API] POST /api/auth/login
+✖ business rates endpoint is public and complete (4011.9777ms)
+✖ CORS rejects disallowed origins for API requests (4.1026ms)
+✖ CORS allows same-origin browser requests (login page usability) (0.2734ms)
+✖ CORS allows file:// pages in development mode (0.1036ms)
+✖ application submission requires authentication (0.0993ms)
+✖ submission generates a unique reference and Pending Review status (0.0797ms)
+✖ financial evaluation is computed server-side (client figures ignored) (0.0907ms)
+✖ password hashes never appear in API responses and verify correctly (0.0845ms)
+✖ passwords are stored as bcrypt hashes, never plaintext (0.1182ms)
+✖ registration ignores unpermitted fields (no role escalation via signup) (0.1171ms)
+✖ customers see only their own applications (0.0662ms)
+✖ customers cannot access admin application APIs (0.0947ms)
+✖ customers cannot authenticate through the admin login endpoint (0.1051ms)
+✖ login rate limiting blocks brute-force attempts (0.0835ms)
+✖ unauthenticated requests cannot access protected APIs (0.0821ms)
+✖ customers cannot access admin APIs (RBAC enforced server-side) (0.0965ms)
+✖ customers cannot authenticate through the admin login endpoint (0.0915ms)
+✖ customers can read ONLY their own loan and payment records (0.0795ms)
+✖ customer profile exposes only the account own data (0.0729ms)
+✖ admin can manage client records with validation and audit logging (0.1047ms)
+✖ JWT tokens are required and validated (no forged roles) (0.1443ms)
+✖ loan application records never leak the owner id in API responses (0.0591ms)
+✖ server source and config files are never served statically (0.0532ms)
+✖ security headers are present on API responses (0.0465ms)
+✖ CORS rejects disallowed origins for API requests (0.0457ms)
+✖ CORS allows same-origin browser requests (login page usability) (0.0495ms)
+✖ CORS allows file:// pages in development mode (0.0467ms)

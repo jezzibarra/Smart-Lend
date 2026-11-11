@@ -1,0 +1,28 @@
+{
+  "name": "smart.lend.app",
+  "version": "1.0.0",
+  "description": "Smart Lending Application (SLAP) - secure micro-lending platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "setup:admin": "node scripts/setup-admin.js",
+    "seed:dev": "node scripts/seed-dev.js",
+    "reset:dev": "node scripts/seed-dev.js --reset",
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "google-auth-library": "^11.2.0",
+    "ioredis": "^6.0.0",
+    "mongoose": "^9.11.1",
+    "nodemailer": "^10.2.1"
+  }
+}

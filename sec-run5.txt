@@ -1,0 +1,110 @@
+◇ injected env (17) from .env
+[DATABASE] Connected to MongoDB (db: "smart_lend_test_security")
+[DATABASE] Connection established on attempt 1 (db: "smart_lend_test_security")
+[API] POST /api/admin/login
+[API] POST /api/auth/send-otp
+[OTP] Verification code dispatched to appcust1@test.local: 226578
+[API] POST /api/auth/signup
+[API] POST /api/auth/login
+[API] POST /api/auth/send-otp
+[OTP] Verification code dispatched to appcust2@test.local: 979538
+[API] POST /api/auth/signup
+[API] POST /api/auth/login
+[API] POST /api/applications
+[API] GET /api/rates
+✔ business rates endpoint is public and complete (5079.0455ms)
+✔ CORS rejects disallowed origins for API requests (5.7045ms)
+[API] GET /api/config
+[API] POST /api/auth/login
+✔ CORS allows same-origin browser requests (login page usability) (13.771ms)
+[API] GET /api/config
+✔ CORS allows file:// pages in development mode (3.2725ms)
+[API] POST /api/applications
+✔ application submission requires authentication (5.2767ms)
+[API] GET /api/applications/mine
+✔ submission generates a unique reference and Pending Review status (12.3474ms)
+[API] GET /api/applications/mine
+✔ financial evaluation is computed server-side (client figures ignored) (11.6019ms)
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+✔ password hashes never appear in API responses and verify correctly (1428.161ms)
+✔ passwords are stored as bcrypt hashes, never plaintext (705.3057ms)
+[API] POST /api/auth/login
+✔ registration ignores unpermitted fields (no role escalation via signup) (608.9502ms)
+[API] GET /api/applications/mine
+[API] GET /api/applications/mine
+✔ customers see only their own applications (12.5429ms)
+[API] GET /api/admin/applications
+[API] PATCH /api/admin/applications/APP-2026-823059/status
+[API] GET /api/applications/APP-2026-823059/documents/idDocument
+[API] GET /api/applications/APP-2026-823059/documents/idDocument
+✔ customers cannot access admin application APIs (36.3592ms)
+[API] POST /api/admin/login
+✔ customers cannot authenticate through the admin login endpoint (6.1034ms)
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+✔ login rate limiting blocks brute-force attempts (31.2122ms)
+[API] GET /api/clients
+[API] GET /api/transactions
+[API] GET /api/admin/audit-logs
+[API] GET /api/admin/security-overview
+[API] GET /api/customer/profile
+[API] GET /api/customer/loans
+[API] GET /api/customer/payments
+[API] POST /api/clients
+✔ unauthenticated requests cannot access protected APIs (24.4891ms)
+[API] GET /api/clients
+[API] POST /api/clients
+[API] DELETE /api/admin/clients/C101
+[API] GET /api/admin/audit-logs
+[API] GET /api/admin/security-overview
+✔ customers cannot access admin APIs (RBAC enforced server-side) (13.0935ms)
+[API] GET /api/customer/loans
+[API] GET /api/customer/loans
+[API] GET /api/customer/payments
+[API] GET /api/customer/payments
+✔ customers can read ONLY their own loan and payment records (19.626ms)
+[API] GET /api/customer/profile
+✔ customer profile exposes only the account own data (7.8883ms)
+[API] GET /api/clients
+[API] POST /api/clients
+[API] POST /api/clients
+[API] DELETE /api/admin/clients/C101
+[API] POST /api/transactions
+[API] POST /api/transactions
+[API] GET /api/admin/audit-logs
+[API] GET /api/admin/security-overview
+✔ admin can manage client records with validation and audit logging (231.403ms)
+[API] GET /api/clients
+[API] GET /api/clients
+✔ JWT tokens are required and validated (no forged roles) (5.0902ms)
+[API] GET /api/admin/applications
+✔ loan application records never leak the owner id in API responses (11.1157ms)
+[API] GET /server.js
+[API] GET /package.json
+[API] GET /models/User.js
+[API] GET /.env
+[API] GET /Admin/server.js
+[API] GET /Admin/package.json
+[API] GET /Login/server.js
+✔ server source and config files are never served statically (21.8912ms)
+[API] GET /api/config
+✔ security headers are present on API responses (2.2461ms)
+✔ CORS rejects disallowed origins for API requests (1.7415ms)
+[API] GET /api/config
+[API] POST /api/auth/login
+✔ CORS allows same-origin browser requests (login page usability) (8.5901ms)
+[API] GET /api/config
+✔ CORS allows file:// pages in development mode (2.46ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11661.1027

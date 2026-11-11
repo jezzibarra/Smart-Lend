@@ -1,0 +1,132 @@
+◇ injected env (17) from .env
+[DATABASE] Connected to MongoDB (db: "smart_lend_test_security")
+[DATABASE] Connection established on attempt 1 (db: "smart_lend_test_security")
+[API] POST /api/admin/login
+[API] POST /api/auth/send-otp
+[OTP] Verification code dispatched to appcust1@test.local: 660556
+[API] POST /api/auth/signup
+[API] POST /api/auth/login
+[API] POST /api/auth/send-otp
+[OTP] Verification code dispatched to appcust2@test.local: 468404
+[API] POST /api/auth/signup
+[API] POST /api/auth/login
+[API] POST /api/applications
+[API] GET /api/rates
+✔ business rates endpoint is public and complete (3771.7812ms)
+✔ CORS rejects disallowed origins for API requests (3.5645ms)
+[API] GET /api/config
+[API] POST /api/auth/login
+✔ CORS allows same-origin browser requests (login page usability) (11.3581ms)
+[API] GET /api/config
+✔ CORS allows file:// pages in development mode (3.4038ms)
+[API] POST /api/applications
+✔ application submission requires authentication (7.2716ms)
+[API] GET /api/applications/mine
+✔ submission generates a unique reference and Pending Review status (14.8077ms)
+[API] GET /api/applications/mine
+✔ financial evaluation is computed server-side (client figures ignored) (11.8124ms)
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+✔ password hashes never appear in API responses and verify correctly (1093.8114ms)
+✔ passwords are stored as bcrypt hashes, never plaintext (514.4489ms)
+[API] POST /api/auth/login
+✔ registration ignores unpermitted fields (no role escalation via signup) (646.7371ms)
+[API] GET /api/applications/mine
+[API] GET /api/applications/mine
+✔ customers see only their own applications (12.8678ms)
+[API] GET /api/admin/applications
+[API] PATCH /api/admin/applications/APP-2026-786988/status
+[API] GET /api/applications/APP-2026-786988/documents/idDocument
+[API] GET /api/applications/APP-2026-786988/documents/idDocument
+✔ customers cannot access admin application APIs (22.481ms)
+[API] POST /api/admin/login
+✔ customers cannot authenticate through the admin login endpoint (6.9218ms)
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+[API] POST /api/auth/login
+✔ login rate limiting blocks brute-force attempts (37.5617ms)
+[API] GET /api/clients
+[API] GET /api/transactions
+[API] GET /api/admin/audit-logs
+[API] GET /api/admin/security-overview
+[API] GET /api/customer/profile
+[API] GET /api/customer/loans
+[API] GET /api/customer/payments
+[API] POST /api/clients
+✔ unauthenticated requests cannot access protected APIs (30.9494ms)
+[API] GET /api/clients
+[API] POST /api/clients
+[API] DELETE /api/admin/clients/C101
+[API] GET /api/admin/audit-logs
+[API] GET /api/admin/security-overview
+✔ customers cannot access admin APIs (RBAC enforced server-side) (16.39ms)
+[API] POST /api/admin/login
+✖ customers cannot authenticate through the admin login endpoint (7.2467ms)
+[API] GET /api/customer/loans
+[API] GET /api/customer/loans
+[API] GET /api/customer/payments
+[API] GET /api/customer/payments
+✔ customers can read ONLY their own loan and payment records (24.1628ms)
+[API] GET /api/customer/profile
+✔ customer profile exposes only the account own data (11.1021ms)
+[API] GET /api/clients
+[API] POST /api/clients
+[API] POST /api/clients
+[API] DELETE /api/admin/clients/C101
+[API] POST /api/transactions
+[API] POST /api/transactions
+[API] GET /api/admin/audit-logs
+[API] GET /api/admin/security-overview
+✔ admin can manage client records with validation and audit logging (190.0472ms)
+[API] GET /api/clients
+[API] GET /api/clients
+✔ JWT tokens are required and validated (no forged roles) (5.7946ms)
+[API] GET /api/admin/applications
+✔ loan application records never leak the owner id in API responses (10.8098ms)
+[API] GET /server.js
+[API] GET /package.json
+[API] GET /models/User.js
+[API] GET /.env
+[API] GET /Admin/server.js
+[API] GET /Admin/package.json
+[API] GET /Login/server.js
+✔ server source and config files are never served statically (23.1596ms)
+[API] GET /api/config
+✔ security headers are present on API responses (3.3487ms)
+✔ CORS rejects disallowed origins for API requests (3.197ms)
+[API] GET /api/config
+[API] POST /api/auth/login
+✔ CORS allows same-origin browser requests (login page usability) (10.5889ms)
+[API] GET /api/config
+✔ CORS allows file:// pages in development mode (3.3864ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 26
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8319.9426
+
+✖ failing tests:
+
+test at test\security.test.js:20:3
+✖ customers cannot authenticate through the admin login endpoint (7.2467ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  429 !== 401
+  
+      at C:\xampp\htdocs\Smart.Lend.App\test\security.test.js:288:10
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 429,
+    expected: 401,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

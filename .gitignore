@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+package-lock.json.bak
+
+# Secrets & environment configurations
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+
+# Uploaded borrower documents & private customer files
+uploads/
+
+# Application and audit logs
+*.log
+logs/
+
+# Test run artifacts & temporary test JSON dumps
+sec-*.txt
+test-*.txt
+test_*.json
+coverage/
+TEST_CREDENTIALS.md
+debug-login.js
+test-login.js
+test-login.mjs
+
+# OS & Editor configurations
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.kilo/

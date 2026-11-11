@@ -1,0 +1,190 @@
+/* ===================================================
+   SLAP - SHARED ANIMATION UTILITIES
+   Lightweight, performant, accessible animations.
+   Durations: 150-350ms for common interactions.
+   =================================================== */
+
+/* Respect user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Page entrance ---- */
+@keyframes slapFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slap-page-enter {
+  animation: slapFadeIn 300ms ease-out both;
+}
+
+/* ---- Card / panel entrance ---- */
+@keyframes slapCardIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.slap-card-in {
+  animation: slapCardIn 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ---- Button interactions ---- */
+button, .btn, .btn-primary, .btn-secondary, .btn-otp, .btn-test-account {
+  transition: transform 160ms ease, background-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
+}
+button:active, .btn:active {
+  transform: scale(0.97);
+}
+button:hover, .btn:hover {
+  transform: translateY(-1px);
+}
+
+/* ---- Input focus ---- */
+input, textarea, select {
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+/* ---- Table rows ---- */
+@keyframes slapRowIn {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.slap-row-in {
+  animation: slapRowIn 220ms ease-out both;
+}
+
+/* ---- Modal / dialog ---- */
+@keyframes slapModalIn {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.slap-modal-in {
+  animation: slapModalIn 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes slapModalOut {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to   { opacity: 0; transform: scale(0.96) translateY(8px); }
+}
+.slap-modal-out {
+  animation: slapModalOut 160ms ease-in both;
+}
+
+/* ---- Toast / notification ---- */
+@keyframes slapToastIn {
+  from { opacity: 0; transform: translateY(-12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.slap-toast-in {
+  animation: slapToastIn 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ---- Skeleton loading ---- */
+@keyframes slapShimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.slap-skeleton {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 800px 100%;
+  animation: slapShimmer 1.4s infinite linear;
+  border-radius: 6px;
+}
+
+/* ---- Number counter hint (opacity pulse) ---- */
+@keyframes slapPulse {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+.slap-pulse {
+  animation: slapPulse 900ms ease-in-out infinite;
+}
+
+/* ---- Sidebar / nav ---- */
+@keyframes slapSlideInLeft {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.slap-slide-in-left {
+  animation: slapSlideInLeft 260ms ease-out both;
+}
+
+/* ---- Spinner ---- */
+@keyframes slapSpin {
+  to { transform: rotate(360deg); }
+}
+.slap-spin {
+  animation: slapSpin 700ms linear infinite;
+}
+
+/* ---- Smooth color transitions on links ---- */
+a {
+  transition: color 180ms ease, opacity 180ms ease;
+}
+
+/* ---- Card hover lift (dashboard) ---- */
+.card, .kpi-card, .stat-card {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.card:hover, .kpi-card:hover, .stat-card:hover {
+  transform: translateY(-2px);
+}
+
+/* EMPTY STATES */
+.empty-state { text-align: center; padding: 40px 20px; color: var(--text-muted); }
+.empty-state .empty-icon { font-size: 2.4rem; color: var(--border-light); margin-bottom: 12px; }
+.empty-state h4 { font-size: 1rem; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
+.empty-state p { font-size: 0.85rem; margin-bottom: 14px; }
+
+/* PAGINATION */
+.pagination { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 16px; flex-wrap: wrap; }
+.pagination button { min-width: 34px; height: 34px; padding: 0 10px; border: 1px solid var(--border-light); background: #ffffff; color: var(--text-main); border-radius: var(--radius-sm); font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 160ms ease; }
+.pagination button:hover:not(:disabled) { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+.pagination button.active { background: var(--primary); border-color: var(--primary); color: #ffffff; }
+.pagination button:disabled { opacity: 0.45; cursor: not-allowed; }
+.pagination .page-info { font-size: 0.78rem; color: var(--text-muted); margin: 0 8px; }
+
+/* FOCUS-VISIBLE */
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+
+/* FAB */
+.fab { position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #1e3a8a, #2563eb); color: #ffffff; border: none; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35); cursor: pointer; transition: transform 200ms ease, box-shadow 200ms ease; z-index: 900; }
+.fab:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 24px rgba(37, 99, 235, 0.45); }
+.fab:active { transform: scale(0.95); }
+
+/* RADIO GROUP */
+.radio-group { display: flex; flex-direction: column; gap: 8px; }
+.radio-option { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--border-light); border-radius: var(--radius-md); cursor: pointer; transition: all 160ms ease; }
+.radio-option:hover { border-color: var(--primary); background: var(--primary-light); }
+.radio-option input[type="radio"] { accent-color: var(--primary); width: 16px; height: 16px; cursor: pointer; }
+.radio-option.selected { border-color: var(--primary); background: var(--primary-light); }
+.radio-option label { cursor: pointer; font-size: 0.88rem; color: var(--text-main); flex: 1; }
+
+/* SLIDER */
+.slider-control { display: flex; flex-direction: column; gap: 6px; }
+.slider-control input[type="range"] { width: 100%; accent-color: var(--primary); }
+.slider-control .slider-value { font-size: 0.85rem; font-weight: 600; color: var(--primary); text-align: right; }
+
+/* MODAL */
+.modal-overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 1000; animation: slapFadeIn 200ms ease-out both; }
+.modal-box { background: #ffffff; border-radius: var(--radius-lg); padding: 24px; max-width: 520px; width: 90%; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25); animation: slapModalIn 220ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.modal-header h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy-900); }
+.modal-close { background: transparent; border: none; font-size: 1.2rem; color: var(--text-muted); cursor: pointer; padding: 4px; transition: color 160ms ease; }
+.modal-close:hover { color: var(--error-color); }
+.modal-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 18px; }
+
+/* TOAST */
+.toast { position: fixed; top: 20px; right: 20px; background: #ffffff; border-left: 4px solid var(--primary); padding: 14px 18px; border-radius: var(--radius-md); box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15); font-size: 0.88rem; z-index: 2000; animation: slapToastIn 240ms cubic-bezier(0.22, 1, 0.36, 1) both; max-width: 360px; }
+.toast.success { border-left-color: var(--success-color); }
+.toast.error { border-left-color: var(--error-color); }
+.toast.warning { border-left-color: #f59e0b; }
+
+/* DARK MODE */
+body.dark { --bg-body: #0f172a; --bg-card: #1e293b; --bg-subtle: #334155; --border-light: #475569; --text-main: #f1f5f9; --text-muted: #94a3b8; background-color: #0f172a; color: #f1f5f9; }
+body.dark .card, body.dark .modal-box { background: #1e293b; border-color: #475569; }
+body.dark input, body.dark textarea, body.dark select { background: #0f172a; color: #f1f5f9; border-color: #475569; }
